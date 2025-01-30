@@ -33,12 +33,34 @@ export const Title = styled.div`
     }
 
     a {
+        ${mixins.fonts.link}
         text-decoration: none;
         color: ${props => props.theme.colors.blue};
         text-transform: uppercase;
-        
         svg {
             margin-left: 5px;
         }
     }
+
 `
+
+export const Description = styled.div`
+    ${mixins.fonts.textM}
+    margin: 10px 0 30px;
+`
+
+export const UserStats = styled.div`
+    ${mixins.fonts.textM}
+    
+    span {
+        margin-right: 27px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    svg {
+        margin-right: 6px;
+        height: 100%;
+    }
+`
+

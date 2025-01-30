@@ -1,6 +1,9 @@
-import { ArrowUpRight, Buildings, GithubLogo, UserGear } from "phosphor-react";
-import { ProfileInto, Title } from "./styles";
+import { Buildings, GithubLogo, UserGear } from "phosphor-react";
+import { Description, ProfileInto, Title, UserStats } from "./styles";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+
 
 export function BlogProfile(){
     return (
@@ -11,17 +14,18 @@ export function BlogProfile(){
                     <h1>Cameron Williamson</h1>
                     <Link to="/">
                         github
-                        <ArrowUpRight size={12}/>
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{ fontSize: '12px' }} />
                     </Link>
                 </Title>
-                <div>
+                <Description>
                     <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
-                </div>
-                <div>
-                    <span><GithubLogo size={18}/>cameronwll</span>
-                    <span><Buildings />Rocketseat</span>
-                    <span><UserGear />32 seguidores</span>
-                </div>
+                </Description>
+                <UserStats>
+                    <span><GithubLogo size={18}/>
+                    cameronwll</span>
+                    <span><Buildings size={18}/>Rocketseat</span>
+                    <span><UserGear size={18}/>32 seguidores</span>
+                </UserStats>
             </div>
         </ProfileInto>
     )
