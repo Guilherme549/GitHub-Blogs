@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { mixins } from "../../styles/mixins";
 
+// ProfileInto
 export const ProfileInto = styled.section`
     gap: 25px;
     display: flex;
@@ -58,9 +59,30 @@ export const UserStats = styled.div`
         align-items: center;
     }
     
-    svg {
+    img {
+        opacity: 0.5;
         margin-right: 6px;
-        height: 100%;
+        height: 18px;
+        width: 18px;
     }
 `
 
+// Post
+
+
+export const SectionTitle = styled.div`
+    display:  flex;
+    justify-content: space-between;
+    margin: 70px 0 14px;
+
+    h3{
+        ${mixins.fonts.titleS}
+        color: ${props => props.theme.colors["base-title"]};
+    }
+
+    span {
+        ${mixins.fonts.textS}
+        color: ${props => props.theme.colors["base-span"]};
+    }
+
+`

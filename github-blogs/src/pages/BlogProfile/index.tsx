@@ -1,12 +1,14 @@
-import { Buildings, GithubLogo, UserGear } from "phosphor-react";
-import { Description, ProfileInto, Title, UserStats } from "./styles";
+import { Description, ProfileInto, SectionTitle, Title, UserStats } from "./styles";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { SearchPostForm } from "./components/SearchPostForm";
 
 
 export function BlogProfile(){
     return (
+        <>
+
         <ProfileInto>
             <img src="./avatar.svg" alt="" />
             <div>
@@ -21,12 +23,27 @@ export function BlogProfile(){
                     <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
                 </Description>
                 <UserStats>
-                    <span><GithubLogo size={18}/>
-                    cameronwll</span>
-                    <span><Buildings size={18}/>Rocketseat</span>
-                    <span><UserGear size={18}/>32 seguidores</span>
+                    <span>
+                        <img src="./icons/github-brands.svg" />
+                        cameronwll
+                    </span>
+                    <span>
+                        <img src="./icons/building-solid.svg" />
+                        Rocketseat
+                    </span>
+                    <span>
+                        <img src="./icons/user-group-solid.svg" />
+                        32 seguidores
+                    </span>
                 </UserStats>
             </div>
         </ProfileInto>
+        <SectionTitle>
+            <h3>Publicações</h3>
+            <span>6 publicações</span>
+        </SectionTitle>
+        <SearchPostForm />
+        
+        </>
     )
 }
