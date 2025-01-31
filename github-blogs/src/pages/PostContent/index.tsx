@@ -1,5 +1,7 @@
+import { HeaderProfile } from "../../components/Profile/HeaderProfile";
+
 export function PostContent(){
     return(
-        <h1>postcontent</h1>
+        <HeaderProfile styleSelect="PostInto"/>
     )
 }

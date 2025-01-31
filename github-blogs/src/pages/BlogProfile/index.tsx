@@ -8,7 +8,7 @@ export function BlogProfile(){
     return (
         <>
 
-        <HeaderProfile />
+        <HeaderProfile styleSelect="ProfileInto"/>
         <SectionTitle>
             <h3>Publicações</h3>
             <span>6 publicações</span>
