@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { SearchPostForm } from "./components/SearchPostForm";
+import { Posts } from "./components/Posts";
 
 
 export function BlogProfile(){
@@ -43,6 +44,7 @@ export function BlogProfile(){
             <span>6 publicações</span>
         </SectionTitle>
         <SearchPostForm />
+        <Posts />
         
         </>
     )

@@ -67,7 +67,7 @@ export const UserStats = styled.div`
     }
 `
 
-// Post
+// Posts
 
 
 export const SectionTitle = styled.div`
@@ -86,3 +86,5 @@ export const SectionTitle = styled.div`
     }
 
 `
+
+

@@ -3,7 +3,7 @@ import { mixins } from "../../../../styles/mixins";
 
 export const SearchPostFormContainer = styled.form`
     width: 54rem;
-
+    margin: 0 0 45px;
     input {
         ${mixins.fonts.textM}
         width: 100%;
@@ -16,7 +16,7 @@ export const SearchPostFormContainer = styled.form`
         border: 2px solid ${props => props.theme.colors["base-border"]};
         border-radius: 6px;
 
-        &:active {
+        &:focus {
             color: ${props => props.theme.colors["base-text"]};
             border-color: ${props => props.theme.colors.blue};
         }
