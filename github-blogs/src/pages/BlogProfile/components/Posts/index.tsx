@@ -1,20 +1,33 @@
 import { Link } from "react-router-dom";
 import { Content, Post, Title } from "./styles";
+import ReactMarkdown from 'react-markdown';
+import { Issue } from "../../../../contexts/PostsContext";
+import { dateFormatter } from "../../../../utils/formatter";
 
-export function Posts(){
+type Props = {
+    post: Issue
+}
+
+export function Posts({ post }: Props) {
     return (
         <Post>
             <Link to='/post'>
                 <Title>
                     <h3>
-                    JavaScript data types and data structures
+                        {post.title}
                     </h3>
-                    <span>Há 1 dia</span>
+                    <span>{dateFormatter.format(new Date(post.created_at))}</span>
                 </Title>
                 <Content>
-                    <p>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in </p>
+                        <ReactMarkdown components={{
+                            h1: () => null, // Não renderiza <h1>
+                            h2: () => null,
+                        }}>
+                            {post.body.substring(0, 230)+ `...`}
+                        </ReactMarkdown>
+                        
                 </Content>
             </Link>
         </Post>
-    )
+    );
 }

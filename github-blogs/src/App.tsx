@@ -4,6 +4,7 @@ import { GlobalStyle } from "./styles/global";
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./Router";
 import { UserContextProvider } from "./contexts/UserContext";
+import { PostsContextProvider } from "./contexts/PostsContext";
 
 export function App() {
 
@@ -11,7 +12,9 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <UserContextProvider>
-          <Router />
+          <PostsContextProvider>
+            <Router />
+          </PostsContextProvider>
         </UserContextProvider>
       </BrowserRouter>
 

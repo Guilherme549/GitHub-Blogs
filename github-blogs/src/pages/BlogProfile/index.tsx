@@ -4,11 +4,12 @@ import { Posts } from "./components/Posts";
 import { HeaderProfile } from "../../components/Profile/HeaderProfile";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import { PostsContext } from "../../contexts/PostsContext";
 
 
 export function BlogProfile(){
     const { user } = useContext(UserContext)
-
+    const { posts, fetchPosts} = useContext(PostsContext)
     return (
         <>
 
@@ -19,12 +20,12 @@ export function BlogProfile(){
         </SectionTitle>
         <SearchPostForm />
         <PostCard>
-            <Posts />
-            <Posts />
-            <Posts />
-            <Posts />
-            <Posts />
-            <Posts />
+            {posts.map((post) => (
+                <Posts 
+                    key={post.id}
+                    post={post}
+                 />
+            ))}
         </PostCard>
         </>
     )

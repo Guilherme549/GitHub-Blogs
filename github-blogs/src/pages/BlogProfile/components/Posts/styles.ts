@@ -32,7 +32,7 @@ export const Title = styled.div`
         ${mixins.fonts.textS}
         color: ${props => props.theme.colors["base-span"]};
         height: 22px;
-        width: 53px;
+        width: 77px;
     }
 `
 

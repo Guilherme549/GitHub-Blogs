@@ -41,14 +41,14 @@ interface UserContexType {
     user: User 
 }
 
-interface UserContextProviderProps {
+export interface ContextProviderProps {
     children: ReactNode
 }
 
 
 export const UserContext = createContext({} as UserContexType)
 
-export function UserContextProvider( {children}: UserContextProviderProps){
+export function UserContextProvider( {children}: ContextProviderProps){
     const [ user, setUser] = useState<User>( {} as User)
 
     async function fetchUser() {

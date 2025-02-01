@@ -15,7 +15,6 @@ type Props = {
 
 
 export function HeaderProfile({ styleSelect, user }: Props) {
-    console.log(user)
     return (
         <>
             {styleSelect === 'ProfileInto' ? (
