@@ -66,12 +66,12 @@ export function HeaderProfile({ styleSelect }: Props) {
                                 cameronwll
                             </span>
                             <span>
-                                <img src="./icons/building-solid.svg" />
-                                Rocketseat
+                                <img src="./icons/calendar-day-solid.svg" />
+                                Há 1 dia
                             </span>
                             <span>
-                                <img src="./icons/user-group-solid.svg" />
-                                32 seguidores
+                                <img src="./icons/comment-solid.svg" />
+                                5 comentários
                             </span>
                         </UserStats>
                     </div>
