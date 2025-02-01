@@ -42,6 +42,13 @@ export const mixins = {
             font-weight: bold;
             line-height: 160%;
             font-size: 12px;
+        `,
+
+        code: css`
+        font-family: "Fira Code", serif;
+        font-weight: 500;
+        line-height: 160%;
+        font-size: 16px;
         `
     }
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-    width: 100vw;
+    width: 99vw;
     height: 18.5rem;
     background-image: url('./Cover.svg');
     background-size: cover;
