@@ -20,4 +20,11 @@ export const SectionTitle = styled.div`
 
 `
 
+export const PostCard = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    grid-row-gap: 25px;
+`
+
 

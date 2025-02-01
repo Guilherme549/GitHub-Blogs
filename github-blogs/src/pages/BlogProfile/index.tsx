@@ -1,4 +1,4 @@
-import { SectionTitle} from "./styles";
+import { PostCard, SectionTitle} from "./styles";
 import { SearchPostForm } from "./components/SearchPostForm";
 import { Posts } from "./components/Posts";
 import { HeaderProfile } from "../../components/Profile/HeaderProfile";
@@ -14,8 +14,14 @@ export function BlogProfile(){
             <span>6 publicações</span>
         </SectionTitle>
         <SearchPostForm />
-        <Posts />
-        
+        <PostCard>
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
+            <Posts />
+        </PostCard>
         </>
     )
 }
