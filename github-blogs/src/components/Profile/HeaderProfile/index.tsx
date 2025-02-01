@@ -3,18 +3,21 @@ import { Description, LinksStyle, PostInto, ProfileInto, Title, Title1, UserStat
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { User } from "../../../contexts/UserContext";
+import { Issue } from "../../../contexts/PostsContext";
+import { dateFormatter } from "../../../utils/formatter";
 
 type VariantStyle = 'ProfileInto' | 'PostInto'
 
 type Props = {
     styleSelect: VariantStyle
     user: User 
+    post: Issue
 }
 
 
 
 
-export function HeaderProfile({ styleSelect, user }: Props) {
+export function HeaderProfile({ styleSelect, user, post }: Props) {
     return (
         <>
             {styleSelect === 'ProfileInto' ? (
@@ -58,26 +61,26 @@ export function HeaderProfile({ styleSelect, user }: Props) {
                             <FontAwesomeIcon icon={faChevronLeft} />
                                     voltar
                             </Link>
-                            <Link to="/">
+                            <a href={post.html_url}>
                                     Ver no github
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{ fontSize: '12px' }} />
-                            </Link>
+                            </a>
                         </LinksStyle>
                         <Title1>
-                        JavaScript data types and data structures
+                        {post.title}
                         </Title1>
                         <UserStats>
                             <span>
                                 <img src="./icons/github-brands.svg" />
-                                cameronwll
+                                {post.user.login}
                             </span>
                             <span>
                                 <img src="./icons/calendar-day-solid.svg" />
-                                Há 1 dia
+                                {dateFormatter.format(new Date(post.created_at))}
                             </span>
                             <span>
                                 <img src="./icons/comment-solid.svg" />
-                                5 comentários
+                                {post.comments}
                             </span>
                         </UserStats>
                     </div>

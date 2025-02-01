@@ -1,30 +1,34 @@
+import { useContext } from "react";
 import { HeaderProfile } from "../../components/Profile/HeaderProfile";
 import { ContentContainer } from "./styles";
+import { PostsContext } from "../../contexts/PostsContext";
+import { useLocation } from "react-router-dom";
+import ReactMarkdown from 'react-markdown';
 
-export function PostContent(){
-    return(
+export function PostContent() {
+    const { posts } = useContext(PostsContext);
+    const location = useLocation();
+
+    // Criando um objeto para manipular os parâmetros de consulta (query params)
+    const queryParams = new URLSearchParams(location.search);
+
+    // Pegando os parâmetros da URL
+    const id = queryParams.get('id');
+
+    // Encontrando o post com o id
+    const post = posts.find((post) => post.id === Number(id));
+
+    if (!post) {
+        return <p>Post não encontrado.</p>; // Adiciona um fallback caso o post não seja encontrado
+    }
+
+    return (
         <>
-        <HeaderProfile styleSelect="PostInto"/>
+            <HeaderProfile styleSelect="PostInto" user={post.user} post={post} />
 
-        <ContentContainer>
-            <div>
-                <p>
-                Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
-                <br />
-                <br />
-                <a href="#">Dynamic typing</a>
-                <br />
-                JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:
-                </p>
-            </div>
-            <pre >
-            <code>let foo = 42;    // foo is now a number</code>
-            <code>foo = `bar`;    // foo is now a string</code>
-            <code>foo = true;    // foo is now a boolean</code>
-            
-            </pre>
-        </ContentContainer>
-
+            <ContentContainer>
+                <ReactMarkdown>{post.body}</ReactMarkdown> {/* Renderiza o conteúdo do post */}
+            </ContentContainer>
         </>
-    )
+    );
 }

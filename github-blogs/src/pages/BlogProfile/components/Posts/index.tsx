@@ -4,14 +4,19 @@ import ReactMarkdown from 'react-markdown';
 import { Issue } from "../../../../contexts/PostsContext";
 import { dateFormatter } from "../../../../utils/formatter";
 
-type Props = {
+export type PostsProps = {
     post: Issue
 }
 
-export function Posts({ post }: Props) {
+export function Posts({ post }: PostsProps) {
     return (
         <Post>
-            <Link to='/post'>
+            <Link to={
+                {
+                    pathname: '/post',
+                    search: `?id=${post.id}&title=${encodeURIComponent(post.title)}&created_at=${encodeURIComponent(post.created_at)}`
+                }
+            }>
                 <Title>
                     <h3>
                         {post.title}
