@@ -17,6 +17,7 @@ export const ProfileInto = styled.section`
     box-shadow: 0px 2px 28px 0px #000000;
 
     img {
+        border-radius: 8px;
         width: 148px;
         height: 148px;
     }
