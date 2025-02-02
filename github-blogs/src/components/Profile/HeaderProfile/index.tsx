@@ -61,10 +61,10 @@ export function HeaderProfile({ styleSelect, user, post }: Props) {
                             <FontAwesomeIcon icon={faChevronLeft} />
                                     voltar
                             </Link>
-                            <a href={post.html_url}>
+                            <Link to={post.html_url}>
                                     Ver no github
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{ fontSize: '12px' }} />
-                            </a>
+                            </Link>
                         </LinksStyle>
                         <Title1>
                         {post.title}

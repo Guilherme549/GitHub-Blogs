@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { mixins } from "../../../../styles/mixins";
 
 export const Post = styled.div`
-
+    
+    
     width: 26rem;
     height: 16.25rem;
     padding: 30px;
@@ -33,12 +34,16 @@ export const Title = styled.div`
         color: ${props => props.theme.colors["base-span"]};
         height: 22px;
         width: 77px;
+        margin-left: 10px;
     }
 `
 
 export const Content = styled.div`
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    
     ${mixins.fonts.textM}
-
     margin: 20px 0px;
 
+    
 `
