@@ -6,9 +6,11 @@ interface SearchPostFormProps {
 }
 
 export function SearchPostForm({ onInputChange }: SearchPostFormProps) {
-  // Função chamada sempre que o valor do input mudar
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onInputChange(event.target.value); // Passa o valor do input para a função
+  // Função chamada ao pressionar Enter no input
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      onInputChange(event.currentTarget.value); // Passa o valor do input para a função
+    }
   };
 
   return (
@@ -16,7 +18,7 @@ export function SearchPostForm({ onInputChange }: SearchPostFormProps) {
       <input
         type="text"
         placeholder="Buscar conteúdo"
-        onChange={handleChange} // Chama a função de handleChange
+        onKeyDown={handleKeyDown} // Chama a função quando pressionar Enter
       />
     </SearchPostFormContainer>
   );
